@@ -1,10 +1,6 @@
 var express = require('express');
 var app = express();
 
-app.get('/', function(req, res){
-  res.send('Hello World!');
-});
+require('./config/middleware.js')(app, express);
 
-app.listen(3000, function(){
-  console.log("We're listening!");
-})
+module.exports = app;
