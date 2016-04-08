@@ -1,5 +1,3 @@
-'use strict';
-
 var bodyParser = require('body-parser');
 
 module.exports = function(app, express){
@@ -11,5 +9,5 @@ module.exports = function(app, express){
   app.use(express.static(__dirname + '/../../client'));
   app.use('/home', homeRouter);
 
-  require('../home/HomeRoutes.js')(homeRouter);
+  require('../home/homeRoutes.js')(homeRouter);
 }
