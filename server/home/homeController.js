@@ -11,7 +11,7 @@ module.exports = {
   search: function(req, res){
     console.log('called search');
     var found = false;
-    console.log(req.data);
+    console.log(req.body.zip);
     for(var i = 0; i < db.stories.length; i++){
       if(db.stories[i].zip === req.data){
         console.log('found zip', db.stories[i].zip);
