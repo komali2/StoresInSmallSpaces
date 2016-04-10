@@ -9,12 +9,12 @@ module.exports = {
 }
   */
   search: function(req, res){
-    var found = false;
+    var sendMe = [];
     for(var i = 0; i < db.stories.length; i++){
       if(Number(db.stories[i].zip) === Number(req.body.zip)){
-        found = true;
+        sendMe.push(db.stories[i]);
       }
     }
-    res.send(found);
+    res.send(sendMe);
   }
 }
