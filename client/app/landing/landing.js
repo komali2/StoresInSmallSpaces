@@ -18,6 +18,11 @@ app.service('landingService', function($http, $location){
 
 app.controller('landingController', function($scope, $location){
   $scope.submit = function(){
-    landingService.submit
+    landingService.submit($scope.searchbox)
+    .then(function(resData){
+      console.log('Success in landingController', resDat);
+    }).catch(function res){
+      console.log("We had an error in landingController", res);
+    }
   }
 });
