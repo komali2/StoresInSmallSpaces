@@ -9,9 +9,9 @@ app.service('landingService', function($http, $location){
     })
     .then(function success(res){
       return res.data;
-    }), function (error(res){
+    }), function error(res){
       return res;
-    });
+    };
   };
 
 });
@@ -20,9 +20,9 @@ app.controller('landingController', function($scope, $location){
   $scope.submit = function(){
     landingService.submit($scope.searchbox)
     .then(function(resData){
-      console.log('Success in landingController', resDat);
-    }).catch(function res){
+      console.log('Success in landingController', resData);
+    }).catch(function (res){
       console.log("We had an error in landingController", res);
-    }
+    });
   }
 });
