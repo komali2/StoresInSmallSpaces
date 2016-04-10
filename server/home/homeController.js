@@ -1,4 +1,4 @@
-var db = require(../db/dbObject.js);
+var db = require('../db/dbObject.js');
 
 module.exports = {
   //functions go here in the following format:
