@@ -1,3 +1,5 @@
+var db = require(../db/dbObject.js);
+
 module.exports = {
   //functions go here in the following format:
   /*
@@ -6,4 +8,7 @@ module.exports = {
   res.send()....
 }
   */
+  search: function(req, res){
+
+  }
 }
