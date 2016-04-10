@@ -9,6 +9,13 @@ module.exports = {
 }
   */
   search: function(req, res){
-
+    var found = false;
+    for(var i = 0; i < db.stories.length; i++){
+      if(db.stories[i].zip === req.data){
+        console.log('found zip', db.stories[i].zip);
+        found = true;
+      }
+    }
+    res.send(found);
   }
 }
