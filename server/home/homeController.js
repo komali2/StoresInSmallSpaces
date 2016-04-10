@@ -13,7 +13,9 @@ module.exports = {
     var found = false;
     console.log(req.body.zip);
     for(var i = 0; i < db.stories.length; i++){
-      if(db.stories[i].zip === req.data){
+      console.log(db.stories[i].zip);
+      console.log(db.stories[i].zip === req.body.zip);
+      if(Number(db.stories[i].zip) === Number(req.body.zip)){
         console.log('found zip', db.stories[i].zip);
         found = true;
         console.log(db.stories[i].zip);
