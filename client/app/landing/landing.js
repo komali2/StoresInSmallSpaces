@@ -1,28 +1,27 @@
 var app = angular.module('storiesApp.landing', []);
 
 app.service('landingService', function($http, $location){
-  this.submit = function(value){
-    return $http({
+  this.submit = function(value, cb){
+     $http({
       method: 'POST',
       url: '/home/search',
       data: value
     })
     .then(function success(res){
-      return res.data;
+      if(cb){
+        cb(res.data);
+      }
     }), function error(res){
-      return res;
+      if(cb){
+        cb(res);
+      }
     };
   };
 
 });
 
-app.controller('landingController', function($scope, $location){
+app.controller('landingController', function($scope, $location, landingService){
   $scope.submit = function(){
     landingService.submit($scope.searchbox)
-    .then(function(resData){
-      console.log('Success in landingController', resData);
-    }).catch(function (res){
-      console.log("We had an error in landingController", res);
-    });
   }
 });
