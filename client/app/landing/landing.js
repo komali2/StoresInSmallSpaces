@@ -2,10 +2,12 @@ var app = angular.module('storiesApp.landing', []);
 
 app.service('landingService', function($http, $location){
   this.submit = function(value, cb){
+    var searchObj = {};
+    searchObj.zip = value;
      $http({
       method: 'POST',
       url: '/home/search',
-      data: value
+      data: searchObj
     })
     .then(function success(res){
       if(cb){
@@ -22,6 +24,8 @@ app.service('landingService', function($http, $location){
 
 app.controller('landingController', function($scope, $location, landingService){
   $scope.submit = function(){
-    landingService.submit($scope.searchbox)
+    landingService.submit($scope.zipcode, function(data){
+      console.log(data);
+    });
   }
 });
