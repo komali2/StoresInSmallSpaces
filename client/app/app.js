@@ -1,6 +1,7 @@
 var app = angular.module('storiesApp', [
   'ngRoute',
-  'storiesApp.landing'
+  'storiesApp.landing',
+  'storiesApp.results',
 ]);
 
 app.config(function($routeProvider, $httpProvider){
