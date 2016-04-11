@@ -1,5 +1,10 @@
 <div id='results' class='container'>
   <div class='storyList'>
-
+    <ul>
+      <li class='storyItem' ng-repeat='story in stories'>
+        <div class='storyTitle'>{{story.title}}</div>
+        <div class='storyContent'>{{story.story}}</div>
+      </li>
+    </ul>
   </div>
 </div>
