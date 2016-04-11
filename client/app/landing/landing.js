@@ -27,6 +27,7 @@ app.controller('landingController', function($scope, $location, landingService, 
     landingService.submit($scope.zipcode, function(data){
       console.log('this is response', data);
       $window.localStorage.setItem('stories', data);
+      $location.path('/results');
     });
   }
 });
