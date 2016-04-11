@@ -25,7 +25,8 @@ app.service('landingService', function($http, $location){
 app.controller('landingController', function($scope, $location, landingService){
   $scope.submit = function(){
     landingService.submit($scope.zipcode, function(data){
-      console.log(data);
+      console.log('this is response', data);
+      $scope.stories = data;
     });
   }
 });
