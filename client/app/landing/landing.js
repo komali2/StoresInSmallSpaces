@@ -26,7 +26,7 @@ app.controller('landingController', function($scope, $location, landingService, 
   $scope.submit = function(){
     landingService.submit($scope.zipcode, function(data){
       console.log('this is response', data);
-      $window.localStorage.setItem('stories', data);
+      $window.localStorage.setItem('stories', JSON.stringify(data));
       $location.path('/results');
     });
   }

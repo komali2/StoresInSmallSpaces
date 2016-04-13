@@ -2,7 +2,9 @@ var app = angular.module('storiesApp.results', []);
 
 app.service('resultsService', function(){
   this.showResults = function(cb){
-    cb(JSON.parse(localStorage.getItem('stories')));
+    var workMe = localStorage.getItem('stories');
+    console.log('were in results service', workMe);
+    cb(workMe);
   }
 });
 
